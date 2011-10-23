@@ -7,7 +7,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(clojure-mode clojure-test-mode clojurescript-mode slime-20100404 slime-repl-20100404 starter-kit starter-kit-bindings starter-kit-lisp starter-kit-ruby)
+(defvar my-packages '(clojure-mode clojure-test-mode clojurescript-mode slime slime-repl starter-kit starter-kit-bindings starter-kit-lisp starter-kit-ruby)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
