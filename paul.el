@@ -3,6 +3,17 @@
 (setq vendor-dir (concat dotfiles-dir "/vendor"))
 (add-to-list 'load-path vendor-dir)
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;; Add in your own as you wish:
+(defvar my-packages '(clojure-mode clojure-test-mode clojurescript-mode slime-20100404 slime-repl-20100404 starter-kit starter-kit-bindings starter-kit-lisp starter-kit-ruby)
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 (menu-bar-mode)
 
 (fset 'insertPound "#")
